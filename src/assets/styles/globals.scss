@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+/** COLORS **/
+$primary-100: #eaf3e2;
+$primary-200: #cbe3b5;
+$primary-300: #add585;
+$primary-400: #91c854;
+$primary-500: #78be20;
+$primary-600: #41a017;
+$primary-700: #158110;
+$primary-800: #0a601b;
+$primary-900: #053e1f;
+
+$gray-100: #e6e6e6;
+$gray-200: #cccccc;
+$gray-300: #b3b3b3;
+$gray-400: #999999;
+$gray-500: #808080;
+$gray-600: #666666;
+$gray-700: #4d4d4d;
+$gray-800: #333333;
+$gray-900: #191919;
+
+$blue-100: #ecfcfd;
+$blue-200: #b7eef5;
+$blue-300: #84dbeb;
+$blue-400: #54c4de;
+$blue-500: #25a8d0;
+$blue-600: #2282a8;
+$blue-700: #1e5f82;
+$blue-800: #18415d;
+$blue-900: #102739;
+
+$yellow-100: #fff8e2;
+$yellow-200: #ffebaf;
+$yellow-300: #fee07d;
+$yellow-400: #fcd64c;
+$yellow-500: #f8cc1c;
+$yellow-600: #c9a21b;
+$yellow-700: #9c7b18;
+$yellow-800: #705613;
+$yellow-900: #46350d;
+
+$warn-100: #fff5eb;
+$warn-200: #ffdab2;
+$warn-300: #ffc17d;
+$warn-400: #ffab4b;
+$warn-500: #fc961e;
+$warn-600: #c86f21;
+$warn-700: #974f20;
+$warn-800: #6a351c;
+$warn-900: #401f15;
+
+$danger-100: #feedee;
+$danger-200: #fab9bc;
+$danger-300: #f38789;
+$danger-400: #ea5d58;
+$danger-500: #df382b;
+$danger-600: #b42a27;
+$danger-700: #8b2226;
+$danger-800: #641b21;
+$danger-900: #3e1219;
+
+
+/** FONTS **/
+$font-regular: '~@/assets/fonts/LeroyMerlinSans-Web-Regular' !default;
+$font-light: '~@/assets/fonts/LeroyMerlinSans-Web-Light' !default;
+$font-semibold: '~@/assets/fonts/LeroyMerlinSans-Web-SemiBold' !default;
+$font-italic: '~@/assets/fonts/LeroyMerlinSans-Web-Italic' !default;
+$font-italic-light: '~@/assets/fonts/LeroyMerlinSans-Web-LightItalic' !default;
+$font-italic-semibold: '~@/assets/fonts/LeroyMerlinSans-Web-SemiBoldItalic' !default;
+
+@mixin addFont($name, $property, $style, $weight) {
+  font-family: $name;
+  src: url('#{$property}.woff') format('woff'), url('#{$property}.woff2') format('woff2');
+  font-style: $style;
+  font-weight: $weight;
+}
+
+@font-face { @include addFont('LM-Regular', $font-regular, normal, normal); }
+@font-face { @include addFont('LM-Regular', $font-light, normal, lighter); }
+@font-face { @include addFont('LM-Regular', $font-semibold, normal, bold); }
+@font-face {  @include addFont('LM-Regular', $font-italic, italic, normal); }
+@font-face { @include addFont('LM-Regular', $font-italic-light, italic, lighter); }
+@font-face { @include addFont('LM-Regular', $font-italic-semibold, italic, bold); }
+
+/** SCROLLBAR STYLE **/
+@mixin scroll {
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+    background-color: #F5F5F5;
+  }
+
+  &::-webkit-scrollbar{
+    width: 6px;
+    background-color: $gray-200;
+  }
+
+  &::-webkit-scrollbar-thumb{
+    background-color: $gray-500;
+  }
+}
+
+html,body{
+  width: 100%;
+  min-width:400px;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: auto;
+  margin:0;
+  padding: 0;
+}
+
+.ml-container{
+  &.ml-container--fluid{
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+.mc-field{
+  .mc-field__label{
+      font-size: 1.1rem;
+      color: $primary-600;
+      font-weight: bold;
+  }
+}
