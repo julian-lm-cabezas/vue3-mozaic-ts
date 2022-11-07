@@ -7,7 +7,7 @@
     <div class="ml-container ml-container--fluid mu-p-200">
       <div class="ml-flexy block mu-p-050">
         <div class="ml-flexy__col--full">
-          <!--<m-icon name="DisplaySearchProduct32" color="#41a017"/>-->
+          <m-icon name="DisplaySearchProduct32" color="#41a017"/>
           <m-heading class="mu-m-075" underline lineHeightXS>Buscar Pedido </m-heading>
         </div>
         <div class="ml-flexy__col--1of4">
@@ -17,11 +17,30 @@
         </div>
         <div class="ml-flexy__col--1of4">
           <m-field id="store" class="mu-m-075" label="Tienda">
-              <m-select id="store-input" v-model="storeNumber" size="s" :items="[]"/>
+              <m-select id="store-input" v-model="storeNumber" size="s" :options="[
+      {
+        text: 'Option 1',
+        value: 'option1',
+        attributes: { 'data-foo': 'value1', 'data-bar': 'value2' },
+      },
+      {
+        text: 'Option 2',
+        value: 'option2',
+      },
+      {
+        text: 'Option 3',
+        value: 'option3',
+      },
+      {
+        text: 'Option 4',
+        value: 4,
+      },
+    ]"/>
             </m-field>
         </div>
         <div class="ml-flexy__col--1of4 ml-flexy__col--push-1of4">
-          <m-button label="Buscar" class="mu-mt-250" size="s" style="width:90%"/>
+          <m-icon name="MonochromeRelayLocation64"/>
+          <m-button label="Buscar" class="mu-mt-250" size="s" style="width:90%" icon='NotificationQuestion48'/>
         </div>
       </div>
     </div>
